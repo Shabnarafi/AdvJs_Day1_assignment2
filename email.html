@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<style>
+
+</style>
+</head>
+<body>
+<input id="demo1" type="text" placeholder="Enter your Email" onblur="validate(demo1.value)"/>
+<p id="demo2"></p>
+<script>
+	var validate = function(val){
+			var pattern = /^([a-zA-Z0-9_\.\-])+\@(([A-Za-z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+			if(pattern.test(val))
+			{
+				document.getElementById("demo2").innerHTML = "Valid Email Address";
+				return true;
+				
+			}
+			else
+			{
+				document.getElementById("demo1").focus();
+				document.getElementById("demo2").innerHTML = "Please enter a valid Email";
+				document.getElementById("demo1").value = "";
+				return false;
+				
+			}
+	
+	};
+</script>
+</body>
+</html>
